@@ -1,9 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
+{% block main_content %}
     <ul>
     {% for book in books %}
-        <li><a href="{{path("showBook", {"id":book.id})}}">{{book.title}}</a></li>
+        <li><a href="{{path("showBook", {"id":book.id})}}">{{book.title}}</a>
+            <p>Summary: {{book.summary|ellipsis(10)}}</p>
+        </li>
     {% endfor %}
     </ul>
 {% endblock %}
