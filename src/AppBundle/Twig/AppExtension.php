@@ -2,8 +2,15 @@
 
 namespace AppBundle\Twig;
 
-class AppExtension extends \Twig_Extension
+class AppExtension extends \Twig_Extension implements \Symfony\Component\DependencyInjection\ContainerAwareInterface
 {
+    
+    private $container;
+    
+    public function setContainer(\Symfony\Component\DependencyInjection\ContainerInterface $container=null){
+        $this->container=$container;
+    }
+    
     public function getFilters()
     {
         return array(
