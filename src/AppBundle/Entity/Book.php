@@ -58,6 +58,13 @@ class Book
 
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="slug", type="string", length=255)
+     */
+    private $slug;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -83,6 +90,25 @@ class Book
      */
     function setIsbm($isbm) {
         $this->isbm = $isbm;
+        return $this;
+    }
+    
+    /**
+     * Get slug
+     * 
+     * @return type
+     */
+    function getSlug() {
+        return $this->slug;
+    }
+
+    /**
+     * 
+     * @param type $slug
+     * @return \AppBundle\Entity\Book
+     */
+    function setSlug($slug) {
+        $this->slug = $slug;
         return $this;
     }
     
